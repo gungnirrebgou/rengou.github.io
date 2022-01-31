@@ -1,0 +1,204 @@
+/* common */
+body{
+  margin:0;
+  line-height: 1.5;
+  font-family:"Yu Gothic medium","游ゴシック Medium",YuGothic,"游ゴシック体","ヒラギノ角ゴ Pro W3",sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  vertical-align:bottom;
+}
+
+@keyframes popup{
+  0%{
+    transform: translateY(30px);
+    opacity:0;
+    animation-timing-function: ease-out;
+  }
+  30%,70%{
+    transform: none;
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(30px);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+/* header */
+header a,footer a{
+    color:skyblue;
+}
+
+h1,p{
+  margin:0;
+}
+
+header{
+  background: hsl(243, 100%, 5% );
+  color:hsl(360, 0%, 84%);
+  position:fixed;
+  width:100%;
+}
+
+header nav{
+  position:absolute;
+  right: 16px;
+  top:20%;
+  font-size:20px;
+}
+
+header .container{
+  display:flex;
+  width:410px;
+  padding:32px 0;
+  margin:0 auto;
+  align-items: center;
+}
+
+header h1{
+  font-size: 32px;
+}
+
+header .icon{
+  border-radius: 50%;
+}
+
+header div + div{
+  margin-left:32px;
+}
+
+header ul{
+  list-style: none;
+  margin:0;
+  padding:0;
+  display:flex;
+  position:absolute;
+  right:16px;
+  bottom:16px;
+}
+
+header ul li + li{
+  margin-left:16px;
+}
+
+/* main */
+main{
+  height:auto;
+}
+
+main .container{
+  padding-top:250px;
+  width:400px;
+  margin:0 auto;
+  text-align: center;
+}
+
+main h1{
+  font-weight: normal;
+  font-size: 34px;
+  border-bottom: 2px solid black;
+}
+
+main h2{
+  font-size: 3rem;
+  font-family:"Philosopher",serif;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+main p{
+  margin:10px 0 42px;
+}
+
+.btn03{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  border-radius: 25px;
+  border: solid 1px #333;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.btn03:hover{
+  border-color:transparent;
+}
+
+.btn03 span {
+  position: relative;
+  z-index: 2;
+  display: block;
+  padding: 10px 30px;
+  background:#fff;
+  border-radius: 25px;
+  color:#333;
+  transition: all 0.3s ease;
+}
+
+/*== 右下に押し込まれる（立体が平面に） */
+
+/*影の設定*/
+.pushright::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 4px;
+  left: 4px;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #333;
+}
+
+.pushright:hover span {
+  background-color: #333;
+  color: #fff;
+  transform: translate(4px, 4px);
+}
+
+.big{
+  background-size: cover;
+  background-position:center top;
+}
+
+#home{
+  background-image: url(img/main-bg.jpg);
+  min-height:100vh;
+}
+/* footer */
+footer{
+  background: hsl(243, 100%, 5% );
+  width:100%;
+  height:100px;
+  position:absolute;
+  bottom:0;
+}
+
+
+footer .fanza{
+  display:flex;
+  width:auto;
+  height:auto;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .message{
+  width:300px;
+  padding:8px 16px;
+  background:#ddd;
+  color:#2c2c2c;
+  border-radius: 4px;
+  box-shadow:0 2px 4px #0a0a0a;
+  position:fixed;
+  right:32px;
+  bottom:32px;
+
+  animation:popup 3s forwards;
+}
